@@ -4,8 +4,15 @@ import { useState } from 'react'
 
 const Expand = () => {
     const [expand, setExpand] = useState(false)
+    const button = document.getElementsByTagName('button')
     const open = () => {
         setExpand(!expand)
+        if (!expand) {
+            button[0].innerHTML = '-'
+        } else {
+            button[0].innerHTML = '+'
+        }
+
     }
 
     return (
